@@ -1,0 +1,42 @@
+#V2
+hello
+help
+sss
+help
+ss
+list
+help
+ii
+list
+clear
+list
+help
+cargo run
+add new.env ENV=1\\nENV2=2
+add new.env ENV=1\\ENV2=2
+add new.env ENV=1\\ENV2=2\\ENV3=3
+add new.env SOMEVAR="somevalue"
+ANOTHERVAR="anothervalue"
+SOMEVAR="somevalue"
+ANOTHERVAR="anothervalue"SOMEVAR="somevalue"
+ANOTHERVAR="anothervalue"
+clear
+ddccd
+help
+ss
+add new.env ENV1=2 \\ ENV2=3
+add new.env ENV1=2\\ENV2=3
+add new.env ENV1=2\\ENV2=3c
+add new.env ENV=1\\nENV2=2
+add new.env ENV1=2\\nENV2=3
+list
+sss
+list
+pick new.env
+ENV1=2
+ENV2=3
+list
+remove new.env
+list
+clear
+list
