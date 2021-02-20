@@ -1,9 +1,0 @@
-/Users/edisoncury/Documents/Development/Rust/storagenv/target/debug/deps/unicode_segmentation-37663f53f95312fd.rmeta: /Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/lib.rs /Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/grapheme.rs /Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/tables.rs /Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/word.rs /Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/sentence.rs
-
-/Users/edisoncury/Documents/Development/Rust/storagenv/target/debug/deps/unicode_segmentation-37663f53f95312fd.d: /Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/lib.rs /Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/grapheme.rs /Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/tables.rs /Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/word.rs /Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/sentence.rs
-
-/Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/lib.rs:
-/Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/grapheme.rs:
-/Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/tables.rs:
-/Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/word.rs:
-/Users/edisoncury/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-segmentation-1.7.1/src/sentence.rs:
