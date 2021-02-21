@@ -11,11 +11,12 @@ pub enum Command<'a> {
     List,
     Add(&'a str, &'a str),
     Remove(&'a str),
+    Show(&'a str),
 }
 
 
 fn help_command<'a>() -> Option<&'a str> {
-    Some("Enter exit to quit.\nEnter 'list' to list all stored env\nEnter 'remove ENV_NAME' to remove specific environment\nEnter 'pick ENV_NAME' to retrieve specific environment file\nEnter 'add ENV_NAME ENV_STRING' to add new environment file\n\n")
+    Some("\nEnter 'list' to list all stored env\nEnter 'show ENV_NAME' to print specific environment\nEnter 'remove ENV_NAME' to remove specific environment\nEnter 'pick ENV_NAME' to retrieve specific environment file\nEnter 'add ENV_NAME ENV_STRING' to add new environment file\n\n")
 }
 
 fn invalid_command<'a>() -> Option<&'a str> {
@@ -67,6 +68,19 @@ fn add_command<'a>(env_name: &str, env_str: &str) -> Option<&'a str> {
     None
 }
 
+fn show_command(env_name: &str) -> Option<&str> {
+    let env_not_found = "Env not found";
+
+    let mut contents = String::new();
+    if let Ok(mut file) = File::open(&format!("envs/{}", env_name)) {
+        file.read_to_string(&mut contents);
+        println!("\nEnv: {}\n\n{}\n", env_name, contents);
+        None
+    } else {
+        Some(env_not_found)
+    }
+}
+
 fn pick_command(env_name: &str) -> Option<&str> {
     let invalid_file = "Invalid env name";
     let invalid_clipboard = "Could not set to clipboard";
@@ -90,6 +104,7 @@ pub fn apply_command<'a>(command: &'a Command) -> Option<&'a str> {
     match command {
         Command::Help => help_command(),
         Command::List => list_command(),
+        Command::Show(name) => show_command(name),
         Command::Pick(name) => pick_command(name),
         Command::Add(name, env) => add_command(name, env),
         Command::Remove(name) => remove_command(name),
@@ -118,7 +133,15 @@ pub fn parse_command(stmt: &str) -> Option<Command> {
                 println!("Invalid remove command");
                 None
             }
-        }
+        },
+        "show" => {
+          if let Some(env_name) = sub_stmts.get(1) {
+              Some(Command::Show(env_name))
+          } else {
+              println!("Invalid show command");
+              None
+          }
+        },
         "add" => {
             if let Some(env_name) = sub_stmts.get(1) {
                 if let Some(env_str) = sub_stmts.get(2) {
@@ -183,5 +206,12 @@ mod tests {
         let stmt = "remove another.env";
         let command = parse_command(stmt).unwrap();
         assert_eq!(command, Command::Remove("another.env"));
+    }
+
+    #[test]
+    fn it_parses_show_command_correctly() {
+        let stmt = "show another.env";
+        let command = parse_command(stmt).unwrap();
+        assert_eq!(command, Command::Show("another.env"));
     }
 }
