@@ -73,7 +73,9 @@ fn show_command(env_name: &str) -> Option<&str> {
 
     let mut contents = String::new();
     if let Ok(mut file) = File::open(&format!("envs/{}", env_name)) {
-        file.read_to_string(&mut contents);
+        if file.read_to_string(&mut contents).is_err() {
+            return Some(env_not_found);
+        }
         println!("\nEnv: {}\n\n{}\n", env_name, contents);
         None
     } else {

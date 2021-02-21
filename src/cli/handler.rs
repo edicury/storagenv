@@ -4,7 +4,7 @@ use crate::cli::commands::{parse_command, apply_command};
 
 pub fn runner() {
     let mut repl = Editor::<()>::new();
-
+    println!("storagenv - type 'help' to see a list of available commands");
     if repl.load_history("history.txt").is_err() {
         println!("No previous history.");
     }
