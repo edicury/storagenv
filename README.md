@@ -15,6 +15,12 @@ or simply print them in order to make life for local development, easier.
     source ~/.zshrc
 ```
 
+## Tests
+
+Run tests for storagenv
+```sh
+  cargo test
+```
 
 ## Available Commands
 
