@@ -15,6 +15,14 @@ or simply print them in order to make life for local development, easier.
     source ~/.zshrc
 ```
 
+## Usage
+
+To add a new env, run the following command:
+```sh
+    storagenv
+    add my.env ENV1=1\nENV2=2
+```
+
 ## Tests
 
 Run tests for storagenv
