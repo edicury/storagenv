@@ -10,7 +10,11 @@ or simply print them in order to make life for local development, easier.
     git clone https://github.com/edicury/storagenv
     cd storagenv
     cargo build --release
-    ./target/release/storagenv
+    mkdir $HOME/storagenv
+    mkdir $HOME/storagenv/bin
+    cp /target/release/storagenv $HOME/storagenv/bin
+    export PATH="$HOME/storagenv/bin:$PATH"
+    source ~/.zshrc
 ```
 
 
